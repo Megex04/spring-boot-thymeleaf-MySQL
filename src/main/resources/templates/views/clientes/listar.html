@@ -12,10 +12,10 @@
 		<h1 th:text="${titulo}"></h1>
 	</div>
 	<div class="container">
-		
-		<a class="btn btn-primary btn-sm mb-3" th:href="@{/views/clientes/create}" 
-			th:text="'Nuevo Cliente'" title="Crear nuevo registro"></a>
-		
+
+		<a class="btn btn-primary btn-sm mb-3" th:href="@{/views/clientes/create}" th:text="'Nuevo Cliente'"
+			title="Crear nuevo registro"></a>
+
 		<table class="table">
 			<thead class="table-dark">
 				<tr>
@@ -25,6 +25,8 @@
 					<th scope="col">Teléfono</th>
 					<th scope="col">Correo</th>
 					<th scope="col">Ciudad</th>
+					<th scope="col">Editar</th>
+					<th scope="col">Eliminar</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -35,6 +37,15 @@
 					<td th:text="${cl.telefono}"></td>
 					<td th:text="${cl.email}"></td>
 					<td th:text="${cl.ciudad.ciudad}"></td>
+					<td>
+						<a class="btn btn-warning btn-sm" th:href="@{/views/clientes/edit/} + ${cl.id}"
+							th:text="'Editar'" title="Editar registro"></a>
+					</td>
+					<td>
+						<a class="btn btn-danger btn-sm" th:href="@{/views/clientes/delete/} + ${cl.id}"
+							th:text="'Eliminar'" title="Eliminar registro" 
+							onclick="return confirm('¿Estas seguro de eliminar el registro?');"></a>
+					</td>
 				</tr>
 			</tbody>
 		</table>

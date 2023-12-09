@@ -9,6 +9,9 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.Pattern;
 
 @Entity
 @Table(name = "clientes")
@@ -20,12 +23,16 @@ public class Cliente implements Serializable{
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
 	
+	// @NotEmpty(message = "{NotEmpty.cliente.nombres}")
+	@NotEmpty
 	private String nombres;
-	
+	@NotEmpty
 	private String apellidos;
-	
+	@NotEmpty
+	@Pattern(regexp = "[0-9]{9}")
 	private String telefono;
-	
+	@NotEmpty
+	@Email
 	private String email;
 	
 	@ManyToOne
