@@ -21,7 +21,7 @@ public class Cliente implements Serializable{
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private long id;
+	private Long id;
 	
 	// @NotEmpty(message = "{NotEmpty.cliente.nombres}")
 	@NotEmpty
@@ -39,11 +39,11 @@ public class Cliente implements Serializable{
 	@JoinColumn(name = "ciudades_id")
 	private Ciudad ciudad;
 
-	public long getId() {
+	public Long getId() {
 		return id;
 	}
 
-	public void setId(long id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 
