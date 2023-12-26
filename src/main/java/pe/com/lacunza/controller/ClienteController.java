@@ -38,6 +38,14 @@ public class ClienteController {
 		model.addAttribute("clientes", listadoClientes);
 		return "/views/clientes/listar";
 	}
+	@GetMapping("/xlsx/")
+	public String listarClientesXlsx(Model model) {
+		List<Cliente> listadoClientes = clienteService.listarTodosClientes();
+		
+		model.addAttribute("titulo", "Lista de Clientes");
+		model.addAttribute("clientes", listadoClientes);
+		return "/views/clientes/listar-xlsx";
+	}
 	
 	@GetMapping("/create")
 	public String crear(Model model) {

@@ -14,22 +14,16 @@
 	<div class="container">
 
 		<div class="row align-items-center mb-2">
-			<div class="col-10">
+			<div class="col-6">
 				<a class="btn btn-primary btn-sm mb-3" th:href="@{/views/clientes/create}" th:text="'Nuevo Cliente'"
-					title="Crear nuevo registro"></a>
+				title="Crear nuevo registro"></a>
 			</div>
-			<div class="col-2 d-flex justify-content-around">
-				<a th:href="@{/views/clientes/(format=pdf)}" title="Exportar a PDF" target="_blank">
-					<img class="img-responsive" th:src="@{/images/pdf.png}" height="60" />
-				</a>
-				<a th:href="@{/views/clientes/xlsx/(format=xlsx)}" title="Exportar a Excel" target="_blank">
-					<img class="img-responsive" th:src="@{/images/xlsx.png}" height="60" />
-				</a>
-			</div>
-
+			<a class="col-6 d-flex justify-content-end" th:href="@{/views/clientes/(format=pdf)}" title="Exportar a PDF" target="_blank">
+				<img class="img-responsive" th:src="@{/images/pdf.png}" height="60" />	
+			</a>
 		</div>
-
-
+		
+			
 		<table class="table">
 			<thead class="table-dark">
 				<tr>
@@ -57,7 +51,7 @@
 					</td>
 					<td>
 						<a class="btn btn-danger btn-sm" th:href="@{/views/clientes/delete/} + ${cl.id}"
-							th:text="'Eliminar'" title="Eliminar registro"
+							th:text="'Eliminar'" title="Eliminar registro" 
 							onclick="return confirm('¿Estas seguro de eliminar el registro?');"></a>
 					</td>
 				</tr>
